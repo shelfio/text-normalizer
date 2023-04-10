@@ -1,0 +1,69 @@
+{
+  "name": "@shelf/text-normalizer",
+  "version": "1.0.0",
+  "description": "Text normalizer initially done for openai/whisper but ported to TS with love by shelf.io!",
+  "license": "MIT",
+  "author": {
+    "name": "Dmytro Harazdovskyi",
+    "email": "dmytro.harazdovskyi@shelf.io",
+    "url": "https://shelf.io"
+  },
+  "main": "lib",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rm -rf lib/ && yarn build:types && yarn build:code",
+    "build:code": "babel src --out-dir lib --ignore '**/*.test.ts' --extensions '.ts' && find ./lib -name '*.test.d.ts' -delete",
+    "build:types": "tsc --emitDeclarationOnly --declaration --isolatedModules false --declarationDir lib",
+    "coverage": "yarn test --coverage",
+    "lint": "yarn lint:ci --fix",
+    "lint:ci": "eslint . --ext .js,.ts,.json",
+    "prepack": "yarn build",
+    "test": "TZ=UTC jest src",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch"
+  },
+  "lint-staged": {
+    "*.{html,md,yml}": [
+      "prettier --write"
+    ],
+    "*.{js,ts,json}": [
+      "eslint --fix"
+    ],
+    ".circleci/config.yml": [
+      ".husky/validate-circleci-config.sh"
+    ]
+  },
+  "babel": {
+    "extends": "@shelf/babel-config/backend"
+  },
+  "prettier": "@shelf/prettier-config",
+  "dependencies": {
+    "fraction.js": "4.2.0",
+    "unicode-properties": "1.4.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.21.0",
+    "@babel/core": "7.21.4",
+    "@shelf/babel-config": "1.2.0",
+    "@shelf/eslint-config": "2.29.0",
+    "@shelf/prettier-config": "1.0.0",
+    "@shelf/tsconfig": "0.0.11",
+    "@types/jest": "29.5.0",
+    "@types/node": "16",
+    "eslint": "8.38.0",
+    "husky": "8.0.3",
+    "jest": "29.5.0",
+    "lint-staged": "13.2.1",
+    "prettier": "2.8.7",
+    "typescript": "4.9.5"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
