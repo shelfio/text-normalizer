@@ -1,4 +1,4 @@
-import { removeSymbolsAndDiacritics } from './helpers';
+import {removeSymbolsAndDiacritics} from './helpers';
 
 describe('removeSymbolsAndDiacritics', () => {
   it('removes symbols and diacritics from text', () => {
@@ -8,7 +8,8 @@ describe('removeSymbolsAndDiacritics', () => {
     expect(removeSymbolsAndDiacritics('Zoë')).toEqual('Zoe');
     expect(removeSymbolsAndDiacritics('ėlo')).toEqual('elo');
   });
+
   it('should remove symbols but keep one', () => {
     expect(removeSymbolsAndDiacritics('résûmé')).toEqual('resume');
-  })
+  });
 });

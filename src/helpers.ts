@@ -1,10 +1,10 @@
-import {removeDiacritics} from "modern-diacritics";
+import {removeDiacritics} from 'modern-diacritics';
 
 export function removeSymbolsAndDiacritics(s: string, keep = ''): string {
   const stringWithoutDiacritics = removeDiacritics(s);
 
   return Array.from(stringWithoutDiacritics)
-    .map((c) => {
+    .map(c => {
       if (keep.includes(c)) {
         return c;
       }
