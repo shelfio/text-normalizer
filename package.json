@@ -41,8 +41,8 @@
   },
   "prettier": "@shelf/prettier-config",
   "dependencies": {
-    "fraction.js": "4.2.0",
-    "unicode-properties": "1.4.1"
+    "modern-diacritics": "2.3.1",
+    "fraction.js": "4.2.0"
   },
   "devDependencies": {
     "@babel/cli": "7.21.0",

@@ -35,11 +35,6 @@ describe('englishNumberNormalizer', () => {
     expect(normalizer.normalize('one thousand')).toBe('1000');
     expect(normalizer.normalize('one million')).toBe('1000000');
     expect(normalizer.normalize('three billion')).toBe('3000000000');
-    // expect(
-    //   normalizer.normalize(
-    //     'two hundred and thirty-four million five hundred and sixty-seven thousand eight hundred and ninety'
-    //   )
-    // ).toBe('234567890');
   });
 
   it('normalize percentages', () => {

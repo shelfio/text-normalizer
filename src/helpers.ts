@@ -1,43 +1,15 @@
-// @ts-ignore
-import {getCategory} from 'unicode-properties';
-
-type AdditionalDiacritics = {
-  [key: string]: string;
-};
-
-const additionalDiacritics: AdditionalDiacritics = {
-  œ: 'oe',
-  Œ: 'OE',
-  ø: 'o',
-  Ø: 'O',
-  æ: 'ae',
-  Æ: 'AE',
-  ß: 'ss',
-  ẞ: 'SS',
-  đ: 'd',
-  Đ: 'D',
-  ð: 'd',
-  Ð: 'D',
-  þ: 'th',
-  Þ: 'th',
-  ł: 'l',
-  Ł: 'L',
-};
+import {removeDiacritics} from "modern-diacritics";
 
 export function removeSymbolsAndDiacritics(s: string, keep = ''): string {
-  return Array.from(s.normalize('NFKD'))
-    .map(c => {
+  const stringWithoutDiacritics = removeDiacritics(s);
+
+  return Array.from(stringWithoutDiacritics)
+    .map((c) => {
       if (keep.includes(c)) {
         return c;
-      } else if (additionalDiacritics[c]) {
-        return additionalDiacritics[c];
-      } else if (getCategory(c) === 'Mn') {
-        return '';
-      } else if (['M', 'S', 'P'].includes(getCategory(c)[0])) {
-        return ' ';
-      } else {
-        return c;
       }
+
+      return removeSymbols(c);
     })
     .join('');
 }
