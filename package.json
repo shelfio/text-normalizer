@@ -1,6 +1,6 @@
 {
   "name": "@shelf/text-normalizer",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Text normalizer initially done for openai/whisper but ported to TS with love by shelf.io!",
   "license": "MIT",
   "author": {
