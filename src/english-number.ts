@@ -482,6 +482,7 @@ export class EnglishNumberNormalizer {
     const hyphenatedNumberPattern =
       /\b(twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)[-](first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|one|two|three|four|five|six|seven|eight|nine)\b/g;
 
+    // eslint-disable-next-line complexity
     return s.replace(hyphenatedNumberPattern, (match, p1, p2) => {
       const tensValue = this.tens.get(p1);
       const isOrdinal = this.onesOrdinal.has(p2);
