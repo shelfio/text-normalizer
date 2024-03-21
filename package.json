@@ -45,8 +45,8 @@
     "modern-diacritics": "2.3.1"
   },
   "devDependencies": {
-    "@babel/cli": "7.23.9",
-    "@babel/core": "7.24.0",
+    "@babel/cli": "7.24.1",
+    "@babel/core": "7.24.3",
     "@shelf/babel-config": "3.0.0",
     "@shelf/eslint-config": "3.13.2",
     "@shelf/prettier-config": "1.0.0",
