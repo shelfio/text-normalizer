@@ -10,6 +10,7 @@
   },
   "main": "lib",
   "types": "lib/index.d.ts",
+  "type": "module",
   "files": [
     "lib"
   ],
