@@ -1,8 +1,9 @@
 {
-  "extends": "@shelf/tsconfig/backend",
+  "extends": "@shelf/tsconfig/frontend",
   "compilerOptions": {
-    "strict": true
+    "noEmit": false,
+    "declaration": true,
+    "outDir": "lib"
   },
-  "exclude": ["node_modules"],
-  "include": ["src"]
+  "include": ["src/index.ts"]
 }
