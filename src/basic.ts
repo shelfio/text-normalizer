@@ -16,7 +16,7 @@ export class BasicTextNormalizer {
     s = this.clean(s).toLowerCase();
 
     if (this.splitLetters) {
-      // @ts-ignore
+      // @ts-expect-error
       s = s
         .match(/[\s\S]/gu) // Split into an array of Unicode grapheme clusters
         .join(' '); // Join with spaces between clusters

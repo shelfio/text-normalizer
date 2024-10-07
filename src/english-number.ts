@@ -56,7 +56,7 @@ export class EnglishNumberNormalizer {
         return [pluralName, [value, 's']];
       })
     );
-    // @ts-ignore
+    // @ts-expect-error
     this.onesOrdinal = new Map([
       ['zeroth', [0, 'th']],
       ['first', [1, 'st']],
@@ -145,7 +145,7 @@ export class EnglishNumberNormalizer {
       ...Array.from(this.precedingPrefixers.values()),
       ...Array.from(this.followingPrefixers.values()),
     ]);
-    // @ts-ignore
+    // @ts-expect-error
     this.suffixers = new Map([
       ['per', new Map([['cent', '%']])],
       ['percent', '%'],
@@ -208,7 +208,6 @@ export class EnglishNumberNormalizer {
 
       const nextIsNumeric = next !== null && /^\d+(\.\d+)?$/.test(next);
       const hasPrefix = this.prefixes.has(current[0]);
-      // @ts-ignore
       const currentWithoutPrefix = hasPrefix ? current.slice(1) : current;
 
       if (/^\d+(\.\d+)?$/.test(currentWithoutPrefix)) {
@@ -243,7 +242,7 @@ export class EnglishNumberNormalizer {
         const ones = this.ones.get(current);
 
         if (value === null) {
-          // @ts-ignore
+          // @ts-expect-error
           value = ones;
         } else if (typeof value === 'string' || this.ones.has(prev)) {
           if (this.tens.has(prev) && ones! < 10) {
@@ -293,7 +292,7 @@ export class EnglishNumberNormalizer {
         const tens = this.tens.get(current);
 
         if (value === null) {
-          // @ts-ignore
+          // @ts-expect-error
           value = tens;
         } else if (typeof value === 'string') {
           value = String(value) + String(tens);
@@ -322,7 +321,7 @@ export class EnglishNumberNormalizer {
         const multiplier = this.multipliers.get(current);
 
         if (value === null) {
-          // @ts-ignore
+          // @ts-expect-error
           value = multiplier;
         } else if (typeof value === 'string' || value === 0) {
           const f = toFraction(value as string);
@@ -332,7 +331,7 @@ export class EnglishNumberNormalizer {
             value = p.n;
           } else {
             yield output(value);
-            // @ts-ignore
+            // @ts-expect-error
             value = multiplier;
           }
         } else {
