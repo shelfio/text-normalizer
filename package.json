@@ -9,14 +9,14 @@
     "url": "https://shelf.io"
   },
   "type": "module",
-  "main": "lib",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
   "scripts": {
     "build": "rm -rf lib/ && yarn build:types && yarn build:code",
-    "build:code": "babel src --out-dir lib --ignore '**/*.test.ts' --extensions '.ts' && find ./lib -name '*.test.d.ts' -delete && cp src/english.json lib/",
+    "build:code": "babel src --out-dir lib --ignore '**/*.test.ts' --extensions '.ts' && find ./lib -name '*.test.d.ts' -delete",
     "build:types": "tsc --emitDeclarationOnly --declaration --isolatedModules false --declarationDir lib",
     "coverage": "yarn test --coverage",
     "lint": "yarn lint:ci --fix",
