@@ -26,17 +26,6 @@
     "prepare": "husky",
     "size": "size-limit"
   },
-  "lint-staged": {
-    "*.{html,md,yml}": [
-      "prettier --write"
-    ],
-    "*.{js,ts,json}": [
-      "eslint --fix"
-    ],
-    ".circleci/config.yml": [
-      ".husky/validate-circleci-config.sh"
-    ]
-  },
   "prettier": "@shelf/prettier-config",
   "dependencies": {
     "fraction.js": "4.3.7",
