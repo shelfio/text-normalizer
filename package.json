@@ -28,7 +28,7 @@
   },
   "prettier": "@shelf/prettier-config",
   "dependencies": {
-    "fraction.js": "4.3.7",
+    "fraction.js": "5.3.4",
     "modern-diacritics": "2.3.1"
   },
   "devDependencies": {
