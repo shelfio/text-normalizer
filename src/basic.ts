@@ -1,4 +1,4 @@
-import {removeSymbols, removeSymbolsAndDiacritics} from './helpers';
+import {removeSymbols, removeSymbolsAndDiacritics} from './helpers.js';
 
 export class BasicTextNormalizer {
   private clean: (s: string) => string;

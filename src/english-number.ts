@@ -1,5 +1,5 @@
 import Fraction from 'fraction.js';
-import {windowed} from './helpers';
+import {windowed} from './helpers.js';
 
 export class EnglishNumberNormalizer {
   zeros: Set<string>;

@@ -1,4 +1,4 @@
-import mapping from './english-mapping';
+import mapping from './english-mapping.js';
 
 export class EnglishSpellingNormalizer {
   private mapping: {[key: string]: string};

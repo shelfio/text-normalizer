@@ -1,6 +1,6 @@
-import {removeSymbolsAndDiacritics} from './helpers';
-import {EnglishSpellingNormalizer} from './english-spelling';
-import {EnglishNumberNormalizer} from './english-number';
+import {removeSymbolsAndDiacritics} from './helpers.js';
+import {EnglishSpellingNormalizer} from './english-spelling.js';
+import {EnglishNumberNormalizer} from './english-number.js';
 
 export class EnglishTextNormalizer {
   private ignorePatterns: RegExp;
