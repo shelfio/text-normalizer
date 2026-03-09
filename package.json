@@ -39,6 +39,7 @@
     "@swc/core": "1.9.1",
     "@swc/jest": "0.2.37",
     "@types/jest": "29.5.14",
+    "@types/minimatch": "5.1.2",
     "@types/node": "20",
     "eslint": "9.30.0",
     "husky": "9.1.6",
