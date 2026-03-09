@@ -226,8 +226,8 @@ export class EnglishNumberNormalizer {
           prefix = hasPrefix ? current[0] : prefix;
         }
 
-        if (f !== null && f.d === 1) {
-          value = f.n;
+        if (f !== null && f.d === 1n) {
+          value = Number(f.n);
         } else {
           value = currentWithoutPrefix;
         }
@@ -327,8 +327,8 @@ export class EnglishNumberNormalizer {
           const f = toFraction(value as string);
           const p = f !== null ? f.mul(multiplier!) : null;
 
-          if (f !== null && p?.d === 1) {
-            value = p.n;
+          if (f !== null && p?.d === 1n) {
+            value = Number(p.n);
           } else {
             yield output(value);
             // @ts-expect-error
@@ -348,8 +348,8 @@ export class EnglishNumberNormalizer {
           const f = toFraction(value);
           const p = f !== null ? f.mul(multiplier) : null;
 
-          if (f !== null && p?.d === 1) {
-            yield output(String(p.n) + suffix);
+          if (f !== null && p?.d === 1n) {
+            yield output(String(Number(p.n)) + suffix);
           } else {
             yield output(value);
             yield output(String(multiplier) + suffix);
@@ -506,7 +506,7 @@ export class EnglishNumberNormalizer {
         const cents = parseInt(m[3], 10);
 
         return `${currency}${integer}.${cents.toString().padStart(2, '0')}`;
-      } catch (error) {
+      } catch {
         return String(m.input);
       }
     };
@@ -514,7 +514,7 @@ export class EnglishNumberNormalizer {
     const extractCents = (m: RegExpMatchArray): string => {
       try {
         return `¢${parseInt(m[1], 10)}`;
-      } catch (error) {
+      } catch {
         return String(m.input);
       }
     };
