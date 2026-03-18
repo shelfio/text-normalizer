@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@shelf/eslint-config": "6.1.1",
-    "@shelf/prettier-config": "1.0.0",
+    "@shelf/prettier-config": "1.1.1",
     "@shelf/tsconfig": "0.1.0",
     "@size-limit/preset-small-lib": "12.0.1",
     "@swc/core": "1.15.18",
