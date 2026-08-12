@@ -36,7 +36,7 @@
     "@shelf/prettier-config": "1.0.0",
     "@shelf/tsconfig": "0.1.0",
     "@size-limit/preset-small-lib": "12.0.1",
-    "@swc/core": "1.15.18",
+    "@swc/core": "1.15.47",
     "@swc/jest": "0.2.39",
     "@types/jest": "30.0.0",
     "@types/minimatch": "5.1.2",
