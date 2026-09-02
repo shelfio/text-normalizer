@@ -1,4 +1,4 @@
-# text-normalizer [![CircleCI](https://circleci.com/gh/shelfio/text-normalizer/tree/master.svg?style=svg)](https://circleci.com/gh/shelfio/text-normalizer/tree/master)![](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
+# text-normalizer [![CircleCI](https://circleci.com/gh/shelfio/text-normalizer/tree/master.svg?style=svg)](https://circleci.com/gh/shelfio/text-normalizer/tree/master)
 
 _Originally took from [openai/whisperer](https://github.com/openai/whisper/tree/main/whisper/normalizers) and rewrote to TS_
 
