@@ -1,6 +1,7 @@
 {
   "extends": "@shelf/tsconfig/frontend",
   "compilerOptions": {
+    "rootDir": "./src",
     "noEmit": false,
     "declaration": true,
     "outDir": "lib"
