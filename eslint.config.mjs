@@ -1,4 +1,4 @@
-import tsRules from '@shelf/eslint-config/typescript.js';
+import tsRules from '@shelf/eslint-config/typescript-no-prettier.js';
 
 export default [
   {files: ['**/*.js', '**/*.json', '**/*.ts']},
