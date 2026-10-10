@@ -15,6 +15,9 @@ importers:
         specifier: 2.3.1
         version: 2.3.1
     devDependencies:
+      '@jest/globals':
+        specifier: 30.2.0
+        version: 30.2.0(supports-color@8.1.1)
       '@shelf/eslint-config':
         specifier: 7.2.0
         version: 7.2.0(eslint@10.8.0(jiti@2.7.0)(supports-color@8.1.1))(jest@30.2.0(@types/node@20.19.43)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.15.18)(@types/node@20.19.43)(typescript@6.0.3)))(prettier@3.9.9)(supports-color@8.1.1)(typescript@6.0.3)
@@ -36,9 +39,6 @@ importers:
       '@types/jest':
         specifier: 30.0.0
         version: 30.0.0
-      '@types/minimatch':
-        specifier: 5.1.2
-        version: 5.1.2
       '@types/node':
         specifier: '20'
         version: 20.19.43
@@ -1251,9 +1251,6 @@ packages:
 
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
-
-  '@types/minimatch@5.1.2':
-    resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
 
   '@types/node@20.19.43':
     resolution: {integrity: sha512-6oYBAi5ikg4Pl+kGsoYtawUMBT2zZMCvPNF7pVLnHZfd1zf38DRiWn/gT01RYCdUqkv7Fhr+C9ot4/tb+2sVvA==}
@@ -4665,8 +4662,6 @@ snapshots:
   '@types/json-schema@7.0.15': {}
 
   '@types/json5@0.0.29': {}
-
-  '@types/minimatch@5.1.2': {}
 
   '@types/node@20.19.43':
     dependencies:
