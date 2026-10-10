@@ -56,7 +56,6 @@ export class EnglishNumberNormalizer {
         return [pluralName, [value, 's']];
       })
     );
-    // @ts-expect-error
     this.onesOrdinal = new Map([
       ['zeroth', [0, 'th']],
       ['first', [1, 'st']],
@@ -66,7 +65,10 @@ export class EnglishNumberNormalizer {
       ['twelfth', [12, 'th']],
       ...Array.from(this.ones.entries())
         .filter(([, value]) => value > 3 && value !== 5 && value !== 12)
-        .map(([name, value]) => [name + (name.endsWith('t') ? 'h' : 'th'), [value, 'th']]),
+        .map(([name, value]): [string, [number, string]] => [
+          name + (name.endsWith('t') ? 'h' : 'th'),
+          [value, 'th'],
+        ]),
     ]);
     this.onesSuffixed = new Map([
       ...Array.from(this.onesPlural.entries()),
@@ -145,8 +147,7 @@ export class EnglishNumberNormalizer {
       ...Array.from(this.precedingPrefixers.values()),
       ...Array.from(this.followingPrefixers.values()),
     ]);
-    // @ts-expect-error
-    this.suffixers = new Map([
+    this.suffixers = new Map<string, string | Map<string, string>>([
       ['per', new Map([['cent', '%']])],
       ['percent', '%'],
     ]);
